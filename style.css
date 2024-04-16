@@ -18,6 +18,16 @@ main {
   overflow: hidden;
 }
 
+aside {
+  position: absolute;
+  top: 0%;
+  left: -30%;
+  width: 30%;
+  height: 100vh;
+  z-index: 4;
+  background-color: aqua;
+}
+
 .parallax-layer {
   position: absolute;
   width: 100%;
@@ -49,7 +59,7 @@ main {
 
 #basicKnight {
   top: 75%;
-  left: 15%;
+  left: 20%;
   background-image: url("assets/characters/basicKnight.png");
   width: 15rem;
   height: 15rem;
@@ -63,4 +73,16 @@ main {
   width: 12rem;
   height: 12rem;
   z-index: 4;
+}
+
+@keyframes slidein {
+  from {
+    top: 0%;
+    left: -30%;
+  }
+
+  to {
+    top: 0%;
+    left: 0%;
+  }
 }
