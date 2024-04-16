@@ -1,0 +1,18 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
+  font-family: "";
+}
+
+aside {
+  width: 30%;
+  height: 100vh;
+}
+
+main {
+  width: 70%;
+  height: 100vh;
+}
