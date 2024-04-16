@@ -7,9 +7,16 @@
   font-family: "";
 }
 
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 aside {
   width: 30%;
   height: 100vh;
+  background-color: rgb(55, 31, 0);
 }
 
 main {
