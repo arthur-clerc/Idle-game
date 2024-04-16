@@ -2,24 +2,47 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  text-decoration: none;
   list-style-type: none;
-  font-family: "";
+  text-decoration: none;
 }
 
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-aside {
-  width: 30%;
-  height: 100vh;
-  background-color: rgb(55, 31, 0);
+body,
+html {
+  height: 100%;
 }
 
 main {
-  width: 70%;
+  position: relative;
+  width: 100%;
   height: 100vh;
+  overflow: hidden;
+}
+
+.parallax-layer {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+
+#layer-1 {
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  background-image: url("assets/bgParallax/layer-1.png");
+}
+
+#layer-2 {
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background-image: url("assets/bgParallax/layer-2.png");
+}
+
+#layer-3 {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-image: url("assets/bgParallax/layer-3.png");
 }
