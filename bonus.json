@@ -1,0 +1,26 @@
+{
+   "greenPotion" :{
+    "goldPerSec": 1
+   },
+   "bluePotion" : {
+    "goldPerSec": 2
+   },
+   "redPotion" :{
+    "goldPerSec": 3
+   },
+   "muscleUp" :{
+    "goldPerSec": 4
+   },
+   "rubySword" :{
+    "goldPerSec": 7
+   },
+   "fireSword" :{
+    "goldPerSec": 8
+   },
+   "brokenSword" :{
+    "goldPerSec": 15
+   },
+   "skull" :{
+    "goldPerSec": 10
+   }
+}
