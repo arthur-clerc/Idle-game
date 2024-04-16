@@ -25,7 +25,23 @@ aside {
   width: 30%;
   height: 100vh;
   z-index: 4;
-  background-color: aqua;
+  background-image: url("assets/toggle/store.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: left 1s;
+}
+
+aside.open {
+  left: 0%;
+}
+
+button {
+  position: absolute;
+  width: 10rem;
+  height: 2rem;
+  background-color: aquamarine;
+  z-index: 7;
+  left: 30rem;
 }
 
 .parallax-layer {
@@ -73,16 +89,4 @@ aside {
   width: 12rem;
   height: 12rem;
   z-index: 4;
-}
-
-@keyframes slidein {
-  from {
-    top: 0%;
-    left: -30%;
-  }
-
-  to {
-    top: 0%;
-    left: 0%;
-  }
 }
