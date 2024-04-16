@@ -46,3 +46,21 @@ main {
   z-index: 1;
   background-image: url("assets/bgParallax/layer-3.png");
 }
+
+#basicKnight {
+  top: 75%;
+  left: 15%;
+  background-image: url("assets/characters/basicKnight.png");
+  width: 15rem;
+  height: 15rem;
+  z-index: 4;
+}
+
+#ennemy {
+  top: 76%;
+  left: 70%;
+  background-image: url("assets/characters/ennemy.png");
+  width: 12rem;
+  height: 12rem;
+  z-index: 4;
+}
