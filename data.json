@@ -1,0 +1,109 @@
+{
+    "armorSet": {
+      "iron": {
+        "helmet": {
+          "price": 5000,
+          "buyReward": 2000,
+          "goldPerSec": 3
+        },
+        "sword": {
+          "price": 5000,
+          "buyReward": 2000,
+          "goldPerSec": 3
+        },
+        "chest": {
+          "price": 5000,
+          "buyReward": 2000,
+          "goldPerSec": 3
+        },
+        "legs": {
+          "price": 5000,
+          "buyReward": 2000,
+          "goldPerSec": 3
+        }
+      },
+      "ironSet": {
+        "buyReward": 20000,
+        "goldPerClick": 200
+      },
+      "gold": {
+        "helmet": {
+          "price": 25000,
+          "buyReward": 4000,
+          "goldPerSec": 6
+        },
+        "sword": {
+          "price": 25000,
+          "buyReward": 4000,
+          "goldPerSec": 6
+        },
+        "chest": {
+          "price": 25000,
+          "buyReward": 4000,
+          "goldPerSec": 6
+        },
+        "legs": {
+          "price": 25000,
+          "buyReward": 4000,
+          "goldPerSec": 6
+        }
+      },
+      "goldSet": {
+        "buyReward": 40000,
+        "goldPerClick": 400
+      },
+      "diamond": {
+        "helmet": {
+          "price": 55000,
+          "buyReward": 8000,
+          "goldPerSec": 12
+        },
+        "sword": {
+          "price": 55000,
+          "buyReward": 8000,
+          "goldPerSec": 12
+        },
+        "chest": {
+          "price": 55000,
+          "buyReward": 8000,
+          "goldPerSec": 12
+        },
+        "legs": {
+          "price": 55000,
+          "buyReward": 8000,
+          "goldPerSec": 12
+        }
+      },
+      "diamondSet": {
+        "buyReward": 80000,
+        "goldPerClick": 800
+      },
+      "nezerit": {
+        "helmet": {
+          "price": 110000,
+          "buyReward": 16000,
+          "goldPerSec": 24
+        },
+        "sword": {
+          "price": 110000,
+          "buyReward": 16000,
+          "goldPerSec": 24
+        },
+        "chest": {
+          "price": 110000,
+          "buyReward": 16000,
+          "goldPerSec": 24
+        },
+        "legs": {
+          "price": 110000,
+          "buyReward": 16000,
+          "goldPerSec": 24
+        }
+      },
+      "nezeritSet": {
+        "buyReward": 160000,
+        "goldPerClick": 1600
+      }
+    }
+  }
+  
