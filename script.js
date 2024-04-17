@@ -95,3 +95,7 @@ function openChest() {
 }
 
 chest.addEventListener('click', openChest);
+
+document.querySelector('#chestContainer').addEventListener('dragstart', function(e) {
+  e.preventDefault();
+});

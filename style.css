@@ -9,6 +9,12 @@
 body,
 html {
   height: 100%;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 main {
@@ -18,14 +24,45 @@ main {
   overflow: hidden;
 }
 
-aside {
+#asideShop {
   position: absolute;
-  top: 0%;
+  top: -1%;
   left: -30%;
   width: 30%;
-  height: 100vh;
-  z-index: 4;
-  background-color: aqua;
+  height: 101%;
+  z-index: 10;
+  background-image: url("assets/toggle/store.png");
+  background-repeat: no-repeat;
+  transition: left 1s;
+}
+
+#asideInventory {
+  position: absolute;
+  top: -1%;
+  left: -30%;
+  width: 30%;
+  height: 101%;
+  z-index: 10;
+  background-image: url("assets/toggle/inventory.png");
+  background-repeat: no-repeat;
+  transition: left 1s;
+}
+
+#asideShop.open {
+  left: 0%;
+}
+
+#asideInventory.open {
+  left: 0%;
+}
+
+button {
+  position: absolute;
+  width: 10rem;
+  height: 2rem;
+  background-color: aquamarine;
+  z-index: 7;
+  left: 30rem;
 }
 
 .parallax-layer {
@@ -59,11 +96,12 @@ aside {
 
 #basicKnight {
   top: 75%;
-  left: 20%;
+  left: 27%;
   background-image: url("assets/characters/basicKnight.png");
   width: 15rem;
   height: 15rem;
   z-index: 5;
+  user-select: none;
 }
 
 #ennemy {
@@ -95,6 +133,7 @@ aside {
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
+  user-select: none;
 }
 
 #chest {
