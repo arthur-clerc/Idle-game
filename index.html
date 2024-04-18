@@ -7,17 +7,37 @@
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
     <script src="inventory.js" defer></script>
+    <script src="progressBar.js" defer></script>
   </head>
   <body>
+
+   
+  
+  
+
     <main>
       <aside id="asideShop"></aside>
       <aside id="asideInventory"></aside>
-      <div id="layer-1" class="parallax-layer"></div>
+
+      <div id="layer-1" class="parallax-layer"></div> 
+      
+      
+      <div id="progress-wrapper">
+        <div id="progress-container">
+          <div id="progress-text">0 / 780,000</div>
+            <div id="progress-bar"></div>
+        </div>
+    </div>
+    
       <div>
         <div id="layer-2" class="parallax-layer"></div>
         <div id="chestContainer">
           <img id="chest" src="assets/miscs/chest.png" alt="Chest">
         </div>
+        <div id="win-message">
+          YOU WIN!
+      </div>
+      
       </div>
       <div id="layer-3" class="parallax-layer"></div>
       <div id="inventory"></div>
