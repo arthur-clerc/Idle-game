@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let message = document.getElementById("message");
   setTimeout(() => {
     message.style.display = "none";
-  }, 5000);
+  }, 7000);
 
   setInterval(() => {
     setTimeout(() => {
