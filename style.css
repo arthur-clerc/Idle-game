@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
-@import url('https://fonts.cdnfonts.com/css/arcade-classic');
+@import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap");
+@import url("https://fonts.cdnfonts.com/css/arcade-classic");
 
 * {
   margin: 0;
@@ -11,7 +11,7 @@
 
 body,
 html {
-  font-family: 'ArcadeClassic', sans-serif;                              
+  font-family: "ArcadeClassic", sans-serif;
   height: 100%;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -19,8 +19,7 @@ html {
   -o-user-select: none;
   user-select: none;
   -webkit-user-drag: none;
-  font-family: 'ArcadeClassic', sans-serif;
-                                                
+  font-family: "ArcadeClassic", sans-serif;
 }
 
 main {
@@ -264,7 +263,6 @@ main {
 
 /* Progress Bar style */
 
-
 #progress-wrapper {
   position: fixed;
   top: 6%;
@@ -278,48 +276,53 @@ main {
   height: 51px;
   background-color: #555;
   position: relative;
-  border: 1mm ridge #BBBBC1;
+  border: 1mm ridge #bbbbc1;
   border-radius: 4px;
   overflow: hidden;
 }
 
 #progress-text {
-  position: absolute; 
+  position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); 
-  color: white; 
-  font-size: 2em; 
-  z-index: 5; 
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 2em;
+  z-index: 5;
 }
 
 #progress-bar {
   height: 100%;
   transition: width 0.5s ease-in-out;
-  display: flex; 
-  align-items: center; 
-  justify-content: center; 
-  color: white; 
-  font-size: 1rem; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1rem;
 }
-
 
 /* display you win style */
 
 #win-message {
-  display: none;
+  display: block;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 3rem;
-  color: white;
-  letter-spacing: 0.3rem;
-  background: rgba(0, 0, 0, 0.8);
+  font-size: 5rem;
   padding: 20px;
   border-radius: 10px;
   z-index: 100;
-  text-shadow: -2px 0 0 #fdff2a, -4px 0 0 #df4a42, 2px 0 0 #91fcfe, 4px 0 0 #4405fc;
+  animation: blink 1s steps(4, start) infinite;
+}
+
+/* class blinkArcade" */
+
+.blinkArcade {
+  color: #fff001;
+  background:#0f0d0d;
+  letter-spacing: 0.3rem;
+  text-shadow: 0 1px 0px #FF0020, 1px 0 0px #0140FF, 1px 2px 1px #FF0020, 2px 1px 1px #0140FF, 2px 3px 2px #FF0020, 3px 2px 2px #0140FF, 3px 4px 2px #FF0020, 4px 3px 3px #0140FF, 4px 5px 3px #FF0020, 5px 4px 2px #0140FF, 5px 6px 2px #FF0020, 6px 5px 2px #0140FF, 6px 7px 1px #FF0020, 7px 6px 1px #0140FF, 7px 8px 0px #FF0020, 8px 7px 0px #0140FF;
   animation: blink 1s steps(4, start) infinite;
 }
 
@@ -379,8 +382,9 @@ main {
   }
 }
 
+
 @keyframes blink {
   to {
-      visibility: hidden;
+    visibility: hidden;
   }
 }
