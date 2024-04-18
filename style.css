@@ -168,20 +168,14 @@ main {
   z-index: 5;
 }
 
-.shopItemIcon {
-  border: 3px solid black;
-  padding: 1rem;
-  background: #e4aa89;
-}
-
-.grid-container {
+.grid-container-shop {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(4, 1fr);
   grid-column-gap: 1rem;
   grid-row-gap: 1rem;
   height: 45vh;
-  width: 25vw;
+  width: 26vw;
 }
 
 .storeTitle {
@@ -211,7 +205,23 @@ main {
   align-items: center;
 }
 
+.goldPiecePng {
+  height: 2vh;
+  width: 1vw;
+}
+
 /******************************************** SHOP ITEMS ********************************************/
+
+.shopItemIcon {
+  border: 3px solid black;
+  padding: 1rem;
+  background: #e4aa89;
+}
+
+.shopItemIcon:hover {
+  cursor: pointer;
+  box-shadow: inset 4px 4px 15px 0px #000000;
+}
 
 /******************************************** ASIDE INVENTORY ********************************************/
 
@@ -340,7 +350,41 @@ main {
   animation: blink 1s steps(4, start) infinite;
 }
 
+/* #basicKnight {
+} */
+
+.attack {
+  animation: attack 0.5s ease-in-out;
+}
+
+.damage {
+  animation: damage 0.5s ease-in-out;
+}
 /******************************************** KEYFRAMES ********************************************/
+
+@keyframes attack {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(30deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes damage {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(20deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
 
 .animate-slide-up-down {
   animation: slideUpDown 2s ease-in-out infinite;

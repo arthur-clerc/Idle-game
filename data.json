@@ -2,24 +2,28 @@
     "armorSet": {
       "iron": {
         "sword": {
+          "id": 0,
           "src": "./assets/swords/ironSword.png",
           "price": 5000,
           "buyReward": 2000,
           "goldPerSec": 3
         },
         "helmet": {
+          "id": 1,
           "src": "./assets/helmets/ironHelmet.png",
           "price": 5000,
           "buyReward": 2000,
           "goldPerSec": 3
         },
         "chest": {
+          "id": 2,
           "src": "./assets/chests/ironChest.png",
           "price": 5000,
           "buyReward": 2000,
           "goldPerSec": 3
         },
         "legs": {
+          "id": 3,
           "src": "./assets/legs/ironLegs.png",
           "price": 5000,
           "buyReward": 2000,
@@ -28,24 +32,28 @@
       },
       "gold": {
         "sword": {
+          "id": 4,
           "src": "./assets/swords/goldSword.png",
           "price": 25000,
           "buyReward": 4000,
           "goldPerSec": 6
         },
         "helmet": {
+          "id": 5,
           "src": "./assets/helmets/goldHelmet.png",
           "price": 25000,
           "buyReward": 4000,
           "goldPerSec": 6
         },
         "chest": {
+          "id": 6,
           "src": "./assets/chests/goldChest.png",
           "price": 25000,
           "buyReward": 4000,
           "goldPerSec": 6
         },
         "legs": {
+          "id": 7,
           "src": "./assets/legs/goldLegs.png",
           "price": 25000,
           "buyReward": 4000,
@@ -54,24 +62,28 @@
       },
       "diamond": {
         "sword": {
+          "id": 8,
           "src": "./assets/swords/diamondSword.png",
           "price": 55000,
           "buyReward": 8000,
           "goldPerSec": 12
         },
         "helmet": {
+          "id": 9,
           "src": "./assets/helmets/diamondHelmet.png",
           "price": 55000,
           "buyReward": 8000,
           "goldPerSec": 12
         },
         "chest": {
+          "id": 10,
           "src": "./assets/chests/diamondChest.png",
           "price": 55000,
           "buyReward": 8000,
           "goldPerSec": 12
         },
         "legs": {
+          "id": 11,
           "src": "./assets/legs/diamondLegs.png",
           "price": 55000,
           "buyReward": 8000,
@@ -80,24 +92,28 @@
       },
       "nezerith": {
         "sword": {
+          "id": 12,
           "src": "./assets/swords/nezerithSword.png",
           "price": 110000,
           "buyReward": 16000,
           "goldPerSec": 24
         },
         "helmet": {
+          "id": 13,
           "src": "./assets/helmets/nezerithHelmet.png",
           "price": 110000,
           "buyReward": 16000,
           "goldPerSec": 24
         },
         "chest": {
+          "id": 14,
           "src": "./assets/chests/nezerithChest.png",
           "price": 110000,
           "buyReward": 16000,
           "goldPerSec": 24
         },
         "legs": {
+          "id": 15,
           "src": "./assets/legs/nezerithLegs.png",
           "price": 110000,
           "buyReward": 16000,
