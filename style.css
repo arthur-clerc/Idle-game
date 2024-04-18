@@ -251,6 +251,30 @@ main {
   z-index: 10;
 }
 
+/* Gold container style with spans */
+
+#gold-container {
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  gap: 20px; 
+  margin-top: 20px; 
+  position: absolute;
+  left: 67%; 
+  top: 12.5%;
+  z-index: 2;
+}
+
+#gold-container span {
+  background: rgba(0, 0, 0, 0.5); 
+  color: white; 
+  padding: 5px 10px; 
+  border-radius: 5px; 
+  box-shadow: 0 0 5px #fff; 
+  font-size: 1rem;
+}
+
+
 /* Progress Bar style */
 
 #progress-wrapper {
@@ -294,7 +318,7 @@ main {
 /* display you win style */
 
 #win-message {
-  display: block;
+  display: none;
   position: fixed;
   top: 50%;
   left: 50%;
