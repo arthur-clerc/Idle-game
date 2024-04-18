@@ -326,7 +326,41 @@ main {
   animation: blink 1s steps(4, start) infinite;
 }
 
+/* #basicKnight {
+} */
+
+.attack {
+  animation: attack 0.5s ease-in-out;
+}
+
+.damage {
+  animation: damage 0.5s ease-in-out;
+}
 /******************************************** KEYFRAMES ********************************************/
+
+@keyframes attack {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(30deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes damage {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(20deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
 
 .animate-slide-up-down {
   animation: slideUpDown 2s ease-in-out infinite;
