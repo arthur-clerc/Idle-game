@@ -1,0 +1,21 @@
+{
+    "armorSet": {
+      "ironSet": {
+        "buyReward": 20000,
+        "goldPerClick": 200
+      },
+      "goldSet": {
+        "buyReward": 40000,
+        "goldPerClick": 400
+      },
+      "diamondSet": {
+        "buyReward": 80000,
+        "goldPerClick": 800
+      },
+      "nezerithSet": {
+        "buyReward": 160000,
+        "goldPerClick": 1600
+      }
+    }
+  }
+  

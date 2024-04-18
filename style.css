@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+@import url('https://fonts.cdnfonts.com/css/arcade-classic');
+
 * {
   margin: 0;
   padding: 0;
@@ -8,6 +11,7 @@
 
 body,
 html {
+  font-family: 'ArcadeClassic', sans-serif;                              
   height: 100%;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -24,46 +28,7 @@ main {
   overflow: hidden;
 }
 
-#asideShop {
-  position: absolute;
-  top: -1%;
-  left: -30%;
-  width: 30%;
-  height: 101%;
-  z-index: 10;
-  background-image: url("assets/toggle/store.png");
-  background-repeat: no-repeat;
-  transition: left 1s;
-}
-
-#asideInventory {
-  position: absolute;
-  top: -1%;
-  left: -30%;
-  width: 30%;
-  height: 101%;
-  z-index: 10;
-  background-image: url("assets/toggle/inventory.png");
-  background-repeat: no-repeat;
-  transition: left 1s;
-}
-
-#asideShop.open {
-  left: 0%;
-}
-
-#asideInventory.open {
-  left: 0%;
-}
-
-button {
-  position: absolute;
-  width: 10rem;
-  height: 2rem;
-  background-color: aquamarine;
-  z-index: 7;
-  left: 30rem;
-}
+/******************************************** PARALLAX ********************************************/
 
 .parallax-layer {
   position: absolute;
@@ -114,18 +79,6 @@ button {
   user-select: none;
 }
 
-@keyframes slidein {
-  from {
-    top: 0%;
-    left: -30%;
-  }
-
-  to {
-    top: 0%;
-    left: 0%;
-  }
-}
-
 #chestContainer {
   position: absolute;
   bottom: 4%;
@@ -160,6 +113,121 @@ button {
   z-index: 6;
 }
 
+#message {
+  display: block;
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  z-index: 99;
+  font-size: 3rem;
+  text-align: center;
+}
+
+/******************************************** ASIDE SHOP ********************************************/
+
+#asideShop {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  position: absolute;
+  top: -1%;
+  left: -30%;
+  width: 27.5%;
+  height: 101%;
+  z-index: 10;
+  background-image: url("assets/toggle/woodBackground.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: left 1s;
+}
+
+#asideShop.open {
+  left: 0%;
+}
+
+#shop {
+  height: 16vh;
+  width: 9vw;
+  background-image: url(assets/miscs/shop.png);
+  background-size: cover;
+  position: absolute;
+  top: 0.5%;
+  left: 37%;
+  z-index: 10;
+}
+
+#shop:hover {
+  cursor: pointer;
+  background-image: url("assets/miscs/shopGif.gif");
+  position: absolute;
+  top: 0.5%;
+  left: 37%;
+  z-index: 5;
+}
+
+.shopItemIcon {
+  border: 3px solid black;
+  padding: 1rem;
+  background: #e4aa89;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-column-gap: 1rem;
+  grid-row-gap: 1rem;
+  height: 45vh;
+  width: 25vw;
+}
+
+.storeTitle {
+  border: 3px solid black;
+  padding: 0.2rem 0.2rem 0.2rem 0.4rem;
+}
+
+.armorSetTitle {
+  border: 3px solid black;
+  font-size: 1.3rem;
+  padding: 1rem;
+  background: #e4aa89;
+}
+
+.titles {
+  padding: 2rem;
+  gap: 2rem;
+  font-size: 1.2rem;
+  position: absolute;
+  display: flex;
+  z-index: 20;
+  letter-spacing: 0.3rem;
+  border: 3px solid black;
+  background: #e4aa89;
+  top: 3%;
+  left: 5%;
+  align-items: center;
+}
+
+/******************************************** ASIDE INVENTORY ********************************************/
+
+#asideInventory {
+  position: absolute;
+  top: -1%;
+  left: -30%;
+  width: 27.5%;
+  height: 101%;
+  z-index: 10;
+  background-image: url("assets/toggle/woodBackground.png");
+  background-repeat: no-repeat;
+  transition: left 1s;
+}
+
+#asideInventory.open {
+  left: 0%;
+}
+
 #inventory {
   height: 16vh;
   width: 8vw;
@@ -177,28 +245,10 @@ button {
   position: absolute;
   top: 0%;
   left: 28%;
-  z-index: 5;
+  z-index: 10;
 }
 
-#shop {
-  height: 16vh;
-  width: 9vw;
-  background-image: url(assets/miscs/shop.png);
-  background-size: cover;
-  position: absolute;
-  top: 0.5%;
-  left: 37%;
-  z-index: 5;
-}
-
-#shop:hover {
-  cursor: pointer;
-  background-image: url("assets/miscs/shopGif.gif");
-  position: absolute;
-  top: 0.5%;
-  left: 37%;
-  z-index: 5;
-}
+/******************************************** KEYFRAMES ********************************************/
 
 .animate-slide-up-down {
   animation: slideUpDown 2s ease-in-out infinite;
@@ -242,3 +292,14 @@ button {
   }
 }
 
+@keyframes slidein {
+  from {
+    top: 0%;
+    left: -30%;
+  }
+
+  to {
+    top: 0%;
+    left: 0%;
+  }
+}

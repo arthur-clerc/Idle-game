@@ -35,3 +35,9 @@ inventory.addEventListener("click", function () {
   }
 });
 
+fetch('data.json')
+.then(response => response.json())
+.then(data => {
+  localStorage.setItem('shopItems', JSON.stringify(data));
+})
+.catch(error => console.error('Erreur lors du chargement des données :', error));

@@ -1,43 +1,47 @@
 document.addEventListener("DOMContentLoaded", function () {
-    
-    hideChest();
+  
+  hideChest();
 
-    setInterval(() => {
-        setTimeout(() => {
-            const chest = document.getElementById('chest');
-           
-            chest.style.display = 'block';
-        }, 5000);
-    }, 1 * 10 * 1000);
-    
-    const layers = document.querySelectorAll(".parallax-layer");
-    const baseZoom = 1.1;
+  let message = document.getElementById('message');
+  setTimeout(() => {
+    message.style.display = 'none';
+  }, 5000);
+
+  setInterval(() => {
+      setTimeout(() => {
+          const chest = document.getElementById('chest');
+          chest.style.display = 'block';
+      }, 3000);
+  }, 1 * 10 * 1000);
   
-    let mouseX = window.innerWidth / 2;
-    let mouseY = window.innerHeight / 2;
-  
+  const layers = document.querySelectorAll(".parallax-layer");
+  const baseZoom = 1.1;
+
+  let mouseX = window.innerWidth / 2;
+  let mouseY = window.innerHeight / 2;
+
+  layers.forEach(function (layer, index) {
+    const speed = index + 1;
+
+    const x = (window.innerWidth / 2 - mouseX * speed) / 100;
+    const y = (window.innerHeight / 2 - mouseY * speed) / 100;
+
+    layer.style.transform = `translateX(${x}px) translateY(${y}px) scale(${baseZoom})`;
+  });
+
+  document.addEventListener("mousemove", function (e) {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+
     layers.forEach(function (layer, index) {
       const speed = index + 1;
-  
       const x = (window.innerWidth / 2 - mouseX * speed) / 100;
       const y = (window.innerHeight / 2 - mouseY * speed) / 100;
-  
+
       layer.style.transform = `translateX(${x}px) translateY(${y}px) scale(${baseZoom})`;
     });
-
-    document.addEventListener("mousemove", function (e) {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-  
-      layers.forEach(function (layer, index) {
-        const speed = index + 1;
-        const x = (window.innerWidth / 2 - mouseX * speed) / 100;
-        const y = (window.innerHeight / 2 - mouseY * speed) / 100;
-  
-        layer.style.transform = `translateX(${x}px) translateY(${y}px) scale(${baseZoom})`;
-      });
-    });
   });
+});
 
 fetch('bonus.json')
   .then(response => response.json())

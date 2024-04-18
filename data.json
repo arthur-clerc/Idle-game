@@ -1,14 +1,14 @@
 {
     "armorSet": {
       "iron": {
-        "helmet": {
-          "src": "./assets/helmets/ironHelmet.png",
+        "sword": {
+          "src": "./assets/swords/ironSword.png",
           "price": 5000,
           "buyReward": 2000,
           "goldPerSec": 3
         },
-        "sword": {
-          "src": "./assets/swords/ironSword.png",
+        "helmet": {
+          "src": "./assets/helmets/ironHelmet.png",
           "price": 5000,
           "buyReward": 2000,
           "goldPerSec": 3
@@ -26,19 +26,15 @@
           "goldPerSec": 3
         }
       },
-      "ironSet": {
-        "buyReward": 20000,
-        "goldPerClick": 200
-      },
       "gold": {
-        "helmet": {
-          "src": "./assets/helmets/goldHelmet.png",
+        "sword": {
+          "src": "./assets/swords/goldSword.png",
           "price": 25000,
           "buyReward": 4000,
           "goldPerSec": 6
         },
-        "sword": {
-          "src": "./assets/swords/goldSword.png",
+        "helmet": {
+          "src": "./assets/helmets/goldHelmet.png",
           "price": 25000,
           "buyReward": 4000,
           "goldPerSec": 6
@@ -56,19 +52,15 @@
           "goldPerSec": 6
         }
       },
-      "goldSet": {
-        "buyReward": 40000,
-        "goldPerClick": 400
-      },
       "diamond": {
-        "helmet": {
-          "src": "./assets/helmets/diamondHelmet.png",
+        "sword": {
+          "src": "./assets/swords/diamondSword.png",
           "price": 55000,
           "buyReward": 8000,
           "goldPerSec": 12
         },
-        "sword": {
-          "src": "./assets/swords/diamondSword.png",
+        "helmet": {
+          "src": "./assets/helmets/diamondHelmet.png",
           "price": 55000,
           "buyReward": 8000,
           "goldPerSec": 12
@@ -86,19 +78,15 @@
           "goldPerSec": 12
         }
       },
-      "diamondSet": {
-        "buyReward": 80000,
-        "goldPerClick": 800
-      },
       "nezerith": {
-        "helmet": {
-          "src": "./assets/helmets/nezerithHelmet.png",
+        "sword": {
+          "src": "./assets/swords/nezerithSword.png",
           "price": 110000,
           "buyReward": 16000,
           "goldPerSec": 24
         },
-        "sword": {
-          "src": "./assets/swords/nezerithSword.png",
+        "helmet": {
+          "src": "./assets/helmets/nezerithHelmet.png",
           "price": 110000,
           "buyReward": 16000,
           "goldPerSec": 24
@@ -115,10 +103,6 @@
           "buyReward": 16000,
           "goldPerSec": 24
         }
-      },
-      "nezerithSet": {
-        "buyReward": 160000,
-        "goldPerClick": 1600
       }
     }
   }
