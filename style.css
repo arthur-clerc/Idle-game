@@ -280,7 +280,7 @@ main {
   left: 50%;
   transform: translate(-50%, -50%); 
   color: white; 
-  font-size: 1em; 
+  font-size: 2em; 
   z-index: 5; 
 }
 
@@ -303,12 +303,15 @@ main {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 2rem;
+  font-size: 3rem;
   color: white;
+  letter-spacing: 0.3rem;
   background: rgba(0, 0, 0, 0.8);
   padding: 20px;
   border-radius: 10px;
   z-index: 100;
+  text-shadow: -2px 0 0 #fdff2a, -4px 0 0 #df4a42, 2px 0 0 #91fcfe, 4px 0 0 #4405fc;
+  animation: blink 1s steps(4, start) infinite;
 }
 
 /******************************************** KEYFRAMES ********************************************/
@@ -364,5 +367,11 @@ main {
   to {
     top: 0%;
     left: 0%;
+  }
+}
+
+@keyframes blink {
+  to {
+      visibility: hidden;
   }
 }
