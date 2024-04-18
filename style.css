@@ -294,7 +294,7 @@ button {
 /* display you win style */
 
 #win-message {
-  /* display: none; */
+  display: none;
   position: fixed;
   top: 50%;
   left: 50%;
