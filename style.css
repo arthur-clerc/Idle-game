@@ -9,6 +9,12 @@
 body,
 html {
   height: 100%;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 main {
@@ -18,20 +24,35 @@ main {
   overflow: hidden;
 }
 
-aside {
+#asideShop {
   position: absolute;
-  top: 0%;
+  top: -1%;
   left: -30%;
   width: 30%;
-  height: 100vh;
-  z-index: 4;
+  height: 101%;
+  z-index: 10;
   background-image: url("assets/toggle/store.png");
-  background-size: cover;
   background-repeat: no-repeat;
   transition: left 1s;
 }
 
-aside.open {
+#asideInventory {
+  position: absolute;
+  top: -1%;
+  left: -30%;
+  width: 30%;
+  height: 101%;
+  z-index: 10;
+  background-image: url("assets/toggle/inventory.png");
+  background-repeat: no-repeat;
+  transition: left 1s;
+}
+
+#asideShop.open {
+  left: 0%;
+}
+
+#asideInventory.open {
   left: 0%;
 }
 
@@ -74,19 +95,150 @@ button {
 }
 
 #basicKnight {
-  top: 75%;
-  left: 20%;
-  background-image: url("assets/characters/basicKnight.png");
+  position: absolute;
+  top: 72%;
+  left: 24%;
   width: 15rem;
   height: 15rem;
-  z-index: 4;
+  z-index: 5;
+  user-select: none;
 }
 
 #ennemy {
-  top: 76%;
-  left: 70%;
-  background-image: url("assets/characters/ennemy.png");
+  position: absolute;
+  top: 74%;
+  right: 20%;
   width: 12rem;
   height: 12rem;
+  z-index: 5;
+  user-select: none;
+}
+
+@keyframes slidein {
+  from {
+    top: 0%;
+    left: -30%;
+  }
+
+  to {
+    top: 0%;
+    left: 0%;
+  }
+}
+
+#chestContainer {
+  position: absolute;
+  bottom: 4%;
+  left: 17%;
+  z-index: 6;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  user-select: none;
+}
+
+#chest {
+  width: 13%;
+}
+
+#chest:hover {
+  cursor: pointer;
+}
+
+.randomItem {
+  height: 15%;
+  width: 10%;
   z-index: 4;
 }
+
+.top-left {
+  position: absolute;
+  top: 5%;
+  left: 30%;
+  width: 91vw;
+  height: 30vh;
+  z-index: 6;
+}
+
+#inventory {
+  height: 16vh;
+  width: 8vw;
+  background-image: url(assets/miscs/inventory.png);
+  background-size: cover;
+  position: absolute;
+  top: 2%;
+  left: 28%;
+  z-index: 5;
+}
+
+#inventory:hover {
+  cursor: pointer;
+  background-image: url("assets/miscs/inventoryGif.gif");
+  position: absolute;
+  top: 0%;
+  left: 28%;
+  z-index: 5;
+}
+
+#shop {
+  height: 16vh;
+  width: 9vw;
+  background-image: url(assets/miscs/shop.png);
+  background-size: cover;
+  position: absolute;
+  top: 0.5%;
+  left: 37%;
+  z-index: 5;
+}
+
+#shop:hover {
+  cursor: pointer;
+  background-image: url("assets/miscs/shopGif.gif");
+  position: absolute;
+  top: 0.5%;
+  left: 37%;
+  z-index: 5;
+}
+
+.animate-slide-up-down {
+  animation: slideUpDown 2s ease-in-out infinite;
+}
+
+@keyframes slideUpDown {
+  0% {
+    transform: translateY(-20px);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-goOutOfScreen {
+  animation: outOfScreenUp 3s ease-in-out forwards;
+}
+
+@keyframes outOfScreenUp {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-10000%);
+  }
+}
+
+.animate-randomLoot {
+  animation: outOfScreenUp 3s ease-in-out forwards;
+}
+
+@keyframes slowUp {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-20px);
+  }
+}
+
