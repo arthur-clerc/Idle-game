@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
-@import url('https://fonts.cdnfonts.com/css/arcade-classic');
+@import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap");
+@import url("https://fonts.cdnfonts.com/css/arcade-classic");
 
 * {
   margin: 0;
@@ -11,7 +11,7 @@
 
 body,
 html {
-  font-family: 'ArcadeClassic', sans-serif;                              
+  font-family: "ArcadeClassic", sans-serif;
   height: 100%;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -19,8 +19,7 @@ html {
   -o-user-select: none;
   user-select: none;
   -webkit-user-drag: none;
-  font-family: 'ArcadeClassic', sans-serif;
-                                                
+  font-family: "ArcadeClassic", sans-serif;
 }
 
 main {
@@ -214,7 +213,6 @@ main {
 
 /******************************************** SHOP ITEMS ********************************************/
 
-
 /******************************************** ASIDE INVENTORY ********************************************/
 
 #asideInventory {
@@ -255,7 +253,6 @@ main {
 
 /* Progress Bar style */
 
-
 #progress-wrapper {
   position: fixed;
   top: 6%;
@@ -269,36 +266,35 @@ main {
   height: 51px;
   background-color: #555;
   position: relative;
-  border: 1mm ridge #BBBBC1;
+  border: 1mm ridge #bbbbc1;
   border-radius: 4px;
   overflow: hidden;
 }
 
 #progress-text {
-  position: absolute; 
+  position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); 
-  color: white; 
-  font-size: 2em; 
-  z-index: 5; 
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 2em;
+  z-index: 5;
 }
 
 #progress-bar {
   height: 100%;
   transition: width 0.5s ease-in-out;
-  display: flex; 
-  align-items: center; 
-  justify-content: center; 
-  color: white; 
-  font-size: 1rem; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1rem;
 }
-
 
 /* display you win style */
 
 #win-message {
-  display: none;
+  display: block;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -310,7 +306,8 @@ main {
   padding: 20px;
   border-radius: 10px;
   z-index: 100;
-  text-shadow: -2px 0 0 #fdff2a, -4px 0 0 #df4a42, 2px 0 0 #91fcfe, 4px 0 0 #4405fc;
+  text-shadow: -2px 0 0 #fdff2a, -4px 0 0 #df4a42, 2px 0 0 #91fcfe,
+    4px 0 0 #4405fc;
   animation: blink 1s steps(4, start) infinite;
 }
 
@@ -372,6 +369,6 @@ main {
 
 @keyframes blink {
   to {
-      visibility: hidden;
+    visibility: hidden;
   }
 }
