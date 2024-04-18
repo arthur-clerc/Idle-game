@@ -19,6 +19,8 @@ html {
   -o-user-select: none;
   user-select: none;
   -webkit-user-drag: none;
+  font-family: 'ArcadeClassic', sans-serif;
+                                                
 }
 
 main {
@@ -249,6 +251,64 @@ main {
   top: 0%;
   left: 28%;
   z-index: 10;
+}
+
+/* Progress Bar style */
+
+
+#progress-wrapper {
+  position: fixed;
+  top: 6%;
+  right: 1%;
+  padding: 10px;
+  z-index: 10;
+}
+
+#progress-container {
+  width: 40vw;
+  height: 51px;
+  background-color: #555;
+  position: relative;
+  border: 1mm ridge #BBBBC1;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+#progress-text {
+  position: absolute; 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  color: white; 
+  font-size: 1em; 
+  z-index: 5; 
+}
+
+#progress-bar {
+  height: 100%;
+  transition: width 0.5s ease-in-out;
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  color: white; 
+  font-size: 1rem; 
+}
+
+
+/* display you win style */
+
+#win-message {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  color: white;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  z-index: 100;
 }
 
 /******************************************** KEYFRAMES ********************************************/

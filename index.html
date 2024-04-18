@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
     <script src="inventory.js" defer></script>
+    <script src="progressBar.js" defer></script>
   </head>
   <body>
     <main>
@@ -38,6 +39,12 @@
       <div id="layer-1" class="parallax-layer"></div>
       <div id="layer-2" class="parallax-layer"></div>
       <div id="layer-3" class="parallax-layer"></div>
+      <div id="progress-wrapper">
+        <div id="progress-container">
+          <div id="progress-text">0 / 780,000</div>
+            <div id="progress-bar"></div>
+        </div>
+      </div>
       <div id="chestContainer">
         <img id="chest" src="assets/miscs/chest.png" alt="Chest">
       </div>
@@ -48,6 +55,9 @@
       <p id="message">PRESS F11 TO PLAY FULLSCREEN<br>
         CLICK TO GAIN GOLD AND SLAY YOUR ENNEMY !
       </p>
+      <div id="win-message">
+        YOU WIN!
+      </div>
     </main>
   </body>
 </html>
