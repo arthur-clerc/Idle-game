@@ -82,7 +82,7 @@ function updateProgressColor() {
 
 function updateGoldPerClick() {
   const armorSet = JSON.parse(localStorage.getItem('armorSet')) || {};
-  
+
   switch (armorSet.name) {
     case 'iron':
       goldPerClick = 300;
@@ -101,28 +101,6 @@ function updateGoldPerClick() {
       break;
   }
   localStorage.setItem('goldPerClick', goldPerClick.toString());
-}
-
-function handleItemClick(piece) {
-  if (piece.price <= currentGold) {
-    if (!boughtItems[piece.id]) {
-        boughtItems[piece.id] = {
-            src: piece.src,
-            price: piece.price,
-            buyReward: piece.buyReward,
-            goldPerSec: piece.goldPerSec
-        };
-        localStorage.setItem('boughtItems', JSON.stringify(boughtItems));
-        currentGold -= piece.price;
-        checkArmorSetCompletion(boughtItems);
-        updateCurrentGold();
-        console.log('Element acheté:', piece);
-    } else {
-        console.log('Element déjà acheté:', piece);
-    }
-} else {
-  console.log(`Vous n'avez pas assez de gold pour acheter cette pièce !`);
-}
 }
 
 function checkArmorSetCompletion(boughtItems) {

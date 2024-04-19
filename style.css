@@ -193,15 +193,11 @@ main {
 .titles {
   padding: 2rem;
   gap: 2rem;
-  font-size: 1.2rem;
-  position: absolute;
   display: flex;
   z-index: 20;
   letter-spacing: 0.3rem;
   border: 3px solid black;
   background: #e4aa89;
-  top: 3%;
-  left: 5%;
   align-items: center;
 }
 
@@ -224,7 +220,8 @@ main {
 }
 
 .bought {
-  opacity: 0.5;
+  opacity: 0.2;
+  pointer-events: none;
 }
 
 /******************************************** ASIDE INVENTORY ********************************************/
