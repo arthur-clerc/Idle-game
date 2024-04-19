@@ -28,9 +28,9 @@ document.addEventListener("DOMContentLoaded", function () {
     layer.style.transform = `translateX(${x}px) translateY(${y}px) scale(${baseZoom})`;
   });
 
-  document.addEventListener("mousemove", function (e) {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
+  document.addEventListener("mousemove", function (event) {
+    mouseX = event.clientX;
+    mouseY = event.clientY;
 
     layers.forEach(function (layer, index) {
       const speed = index + 1;
