@@ -6,6 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
+    <script src="store.js" defer></script>
     <script src="inventory.js" defer></script>
     <script src="progress.js" defer></script>
   </head>
@@ -22,10 +23,22 @@
       </aside>
       <aside id="asideInventory"></aside>
        <!-- parallax backgrounds-->
+      <aside id="asideInventory">
+        <div class="titles">
+          <h2>INVENTORY</h2>
+          <h2 class="storeTitle">SHOP</h2>
+        </div>
+        <h3 class="armorSetTitle">ARMOR SETS</h3>
+        <div class="grid-container-shop"></div>
+        <div class="grid-container-inventory"></div>
+      </aside>
       <div id="layer-1" class="parallax-layer"></div>
       <div id="layer-2" class="parallax-layer"></div>
       <div id="layer-3" class="parallax-layer"></div>
         <!-- progressBar -->
+
+      <!-- progressBar -->
+
       <div id="progress-wrapper">
         <div id="progress-container">
           <div id="progress-text"></div>
@@ -39,6 +52,15 @@
         <span id="currentGold"></span>
       </div>
       <!-- display PNG : chest, inventory, shop, player & ennemy -->
+
+      <!-- display gold container with spans-->
+
+      <div id="gold-container">
+        <span id="goldPerSec">Gold/Sec: 0</span>
+        <span id="goldPerClick">Gold/Clic: 0</span>
+        <span id="currentGold">Current Gold: 0</span>
+      </div>
+
       <div id="chestContainer">
         <img id="chest" src="assets/miscs/chest.png" alt="Chest" />
       </div>
@@ -52,6 +74,13 @@
       <div id="win-message" class="blinkArcade">
         YOU WIN!
       </div>
+      <img src="assets/characters/basicKnight.png" id="basicKnight" />
+      <img src="/assets/characters/ennemy.png" id="ennemy" />
+      <p id="message" class="blinkArcade">
+        PRESS F11 TO PLAY FULLSCREEN<br />
+        CLICK EVERYWHERE TO GAIN GOLD !
+      </p>
+      <div id="win-message" class="blinkArcade">YOU WIN!</div>
     </main>
   </body>
 </html>
