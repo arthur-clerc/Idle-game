@@ -90,31 +90,31 @@
           "goldPerSec": 12
         }
       },
-      "nezerith": {
+      "nezerit": {
         "sword": {
           "id": 12,
-          "src": "./assets/swords/nezerithSword.png",
+          "src": "./assets/swords/nezeritSword.png",
           "price": 110000,
           "buyReward": 16000,
           "goldPerSec": 24
         },
         "helmet": {
           "id": 13,
-          "src": "./assets/helmets/nezerithHelmet.png",
+          "src": "./assets/helmets/nezeritHelmet.png",
           "price": 110000,
           "buyReward": 16000,
           "goldPerSec": 24
         },
         "chest": {
           "id": 14,
-          "src": "./assets/chests/nezerithChest.png",
+          "src": "./assets/chests/nezeritChest.png",
           "price": 110000,
           "buyReward": 16000,
           "goldPerSec": 24
         },
         "legs": {
           "id": 15,
-          "src": "./assets/legs/nezerithLegs.png",
+          "src": "./assets/legs/nezeritLegs.png",
           "price": 110000,
           "buyReward": 16000,
           "goldPerSec": 24

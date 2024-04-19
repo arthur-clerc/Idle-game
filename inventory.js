@@ -35,17 +35,11 @@ inventory.addEventListener("click", function () {
   }
 });
 
-fetch('data.json')
-.then(response => response.json())
-.then(data => {
-  localStorage.setItem('shopItems', JSON.stringify(data));
-})
-.catch(error => console.error('Erreur lors du chargement des données :', error));
-
 function fetchDataAndCreateElements() {
   fetch('data.json')
     .then(response => response.json())
     .then(data => {
+      localStorage.setItem('shopItems', JSON.stringify(data));
       const armorSets = data.armorSet;
       const gridContainerShop = document.querySelector('.grid-container-shop');
       let itemIdCounter = 1;
@@ -85,22 +79,21 @@ function fetchDataAndCreateElements() {
     .catch(error => console.error('Error fetching data:', error));
 }
 
-function handleItemClick(piece) {
-  let boughtItems = JSON.parse(localStorage.getItem('boughtItems')) || {};
-
-  if (!boughtItems[piece.id]) {
-    boughtItems[piece.id] = {
-      src: piece.src,
-      price: piece.price,
-      buyReward: piece.buyReward,
-      goldPerSec: piece.goldPerSec
-    };
-    localStorage.setItem('boughtItems', JSON.stringify(boughtItems));
-
-    console.log('Element acheté:', piece);
-  } else {
-    console.log('Element déjà acheté:', piece);
+function checkBoughtItems() {
+  const boughtItems = JSON.parse(localStorage.getItem('boughtItems'));
+  if (boughtItems) {
+    boughtItems.forEach(itemId => {
+      const item = document.getElementById(`grid-item${itemId}`);
+      console.log(itemId);
+      if (item) {
+        item.classList.add('bought');
+        item.removeEventListener('click', handleItemClick);
+        item.style.pointerEvents = 'none';
+      }
+    });
   }
 }
 
 fetchDataAndCreateElements();
+checkBoughtItems();
+
