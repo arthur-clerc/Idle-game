@@ -84,6 +84,8 @@ function fetchDataAndCreateElements() {
                   
                   checkArmorSetCompletion(boughtItems);
                   updateCurrentGold();
+                  checkCharacterColor();
+
                   console.log('Element acheté:', piece);
                 } else {
                   console.log('Element déjà acheté:', piece);
@@ -103,3 +105,26 @@ function fetchDataAndCreateElements() {
 }
 
 fetchDataAndCreateElements();
+
+function checkCharacterColor() {
+  const armorSet = JSON.parse(localStorage.getItem('armorSet')) || {};
+  const basicKnight = document.getElementById('basicKnight');
+  
+  switch (armorSet.name) {
+    case 'iron':
+      basicKnight.src = '/assets/characters/ironKnight.png';
+      break;
+    case 'gold':
+      basicKnight.src = '/assets/characters/goldKnight.png';
+      break;
+    case 'diamond':
+      basicKnight.src = '/assets/characters/diamondKnight.png';
+      break;
+    case 'nezerit':
+      basicKnight.src = '/assets/characters/nezeritKnight.png';
+      break;
+    default:
+      basicKnight.src = '/assets/characters/basicKnight.png';
+      break;
+  }
+}

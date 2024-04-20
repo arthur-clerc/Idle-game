@@ -6,6 +6,7 @@ let boughtItems = JSON.parse(localStorage.getItem('boughtItems')) || {};
 let currentGold = localStorage.getItem('currentGold');
 let currentProgress = localStorage.getItem('progress') ? parseInt(localStorage.getItem('progress'), 10) : 0;
 const maxProgress = 1000000;
+let reset = document.getElementById('reset');
 
 fetch("armorSet.json")
   .then((response) => response.json())
@@ -15,14 +16,6 @@ fetch("armorSet.json")
   .catch((error) =>
     console.error("Erreur lors du chargement des données :", error)
   );
-
-document.addEventListener('click', () => {
-  if (currentProgress < maxProgress) {
-      updateProgress();
-      updateCurrentGold();
-      updateGoldPerClick()
-  }
-});
 
 window.addEventListener('load', () => {
   const currentGold = parseInt(localStorage.getItem('currentGold'));
@@ -82,26 +75,33 @@ function updateProgressColor() {
 
 function updateGoldPerClick() {
   const armorSet = JSON.parse(localStorage.getItem('armorSet')) || {};
-
+  const basicKnight = document.getElementById('basicKnight');
+  
   switch (armorSet.name) {
     case 'iron':
       goldPerClick = 300;
+      basicKnight.src = '/assets/characters/ironKnight.png';
       break;
     case 'gold':
       goldPerClick = 500;
+      basicKnight.src = '/assets/characters/goldKnight.png';
       break;
     case 'diamond':
       goldPerClick = 900;
+      basicKnight.src = '/assets/characters/diamondKnight.png';
       break;
     case 'nezerit':
       goldPerClick = 1700;
+      basicKnight.src = '/assets/characters/nezeritKnight.png';
       break;
     default:
       goldPerClick = 100;
+      basicKnight.src = '/assets/characters/basicKnight.png';
       break;
   }
   localStorage.setItem('goldPerClick', goldPerClick.toString());
 }
+
 
 function checkArmorSetCompletion(boughtItems) {
   const armorSets = {
@@ -124,3 +124,8 @@ function checkArmorSetCompletion(boughtItems) {
 
 updateProgressBar();
 updateProgressColor();
+
+reset.addEventListener('click', function() {
+      localStorage.clear();
+      location.reload();
+})

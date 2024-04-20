@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
+  
   hideChest();
-
+  checkCharacterColor()
+  
   let message = document.getElementById("message");
   setTimeout(() => {
     message.style.display = "none";
@@ -113,7 +115,10 @@ let basicKnight = document.querySelector("#basicKnight");
 let ennemy = document.querySelector("#ennemy");
 let sound = new Audio("assets/son/metal-whoosh-hit.mp3");
 
-basicKnight.addEventListener("click", function () {
+ennemy.addEventListener("click", function () {
+  updateProgress();
+  updateCurrentGold();
+  updateGoldPerClick()
   basicKnight.classList.add("attack");
   ennemy.classList.add("damage");
   sound.play();

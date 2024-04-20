@@ -29,6 +29,22 @@ main {
   overflow: hidden;
 }
 
+#reset {
+  position: absolute;
+  top: 2%;
+  right: 2%;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 5px 10px;
+  box-shadow: 0 0 5px #fff;
+  font-size: 1rem;
+  z-index: 999;
+  border-radius: 5px;
+}
+
+#reset:hover {
+ cursor: pointer; 
+}
 /******************************************** PARALLAX ********************************************/
 
 .parallax-layer {
@@ -78,6 +94,7 @@ main {
   height: 12rem;
   z-index: 5;
   user-select: none;
+  -webkit-user-drag: none;
 }
 
 #chestContainer {
