@@ -5,7 +5,7 @@ let inventory = document.getElementById("inventory");
 let isOpenedInventory = false;
 let isOpenedShop = false;
 
-shop.addEventListener("click", function () {
+function toggleShop() {
   if (isOpenedInventory === false && isOpenedShop === false) {
     asideShop.classList.toggle("open");
     isOpenedShop = true;
@@ -18,9 +18,9 @@ shop.addEventListener("click", function () {
     asideShop.classList.toggle("open");
     isOpenedShop = false;
   }
-});
+}
 
-inventory.addEventListener("click", function () {
+function toggleInventory() {
   if (isOpenedShop === false && isOpenedInventory === false) {
     asideInventory.classList.toggle("open");
     isOpenedInventory = true;
@@ -33,7 +33,18 @@ inventory.addEventListener("click", function () {
     asideInventory.classList.toggle("open");
     isOpenedInventory = false;
   }
+}
+
+document.addEventListener("keydown", function(event) {
+  if (event.key === "s") {
+    toggleShop();
+  } else if (event.key === "i") {
+    toggleInventory();
+  }
 });
+
+shop.addEventListener("click", toggleShop);
+inventory.addEventListener("click", toggleInventory);
 
 function fetchDataAndCreateElements() {
   fetch('data.json')
@@ -76,15 +87,14 @@ function fetchDataAndCreateElements() {
                     buyReward: piece.buyReward,
                     goldPerSec: piece.goldPerSec
                   };
-                  
+                  newItem.classList.add('bought');
                   localStorage.setItem('boughtItems', JSON.stringify(boughtItems));
                   currentGold -= piece.price;
             
-                  newItem.classList.add('bought');
-                  
                   checkArmorSetCompletion(boughtItems);
                   updateCurrentGold();
                   checkCharacterColor();
+                  displayInventory();
 
                   console.log('Element acheté:', piece);
                 } else {
@@ -100,11 +110,13 @@ function fetchDataAndCreateElements() {
           }
         }
       }
+      checkBoughtItems();
     })
     .catch(error => console.error('Error fetching data:', error));
 }
 
 fetchDataAndCreateElements();
+
 
 function checkCharacterColor() {
   const armorSet = JSON.parse(localStorage.getItem('armorSet')) || {};
@@ -126,5 +138,77 @@ function checkCharacterColor() {
     default:
       basicKnight.src = '/assets/characters/basicKnight.png';
       break;
+  }
+}
+function displayInventory() {
+  const boughtItems = JSON.parse(localStorage.getItem('boughtItems')) || {};
+  const gridContainerInventory = document.querySelector('.grid-container-inventory');
+  gridContainerInventory.innerHTML = '';
+  let itemIdCounter = 1;
+
+  for (const itemId in boughtItems) {
+      const item = boughtItems[itemId];
+      const src = item.src;
+      const goldPerSec = item.goldPerSec;
+
+      const newInventoryItem = document.createElement('div');
+      newInventoryItem.id = `grid-inventory${itemIdCounter}`;
+      newInventoryItem.className = 'shopItemIcon';
+      newInventoryItem.style.backgroundSize = 'cover';
+      newInventoryItem.style.backgroundImage = `url("${src}")`;
+      newInventoryItem.style.padding = '0';
+      newInventoryItem.innerHTML = `
+          <div style='display:flex; justify-content:center; align-items:center;'>
+              <span style='display:flex; justify-content:center;color:white;'>${goldPerSec} gold/s</span>
+          </div>
+      `;
+
+      gridContainerInventory.appendChild(newInventoryItem);
+
+      itemIdCounter++;
+  }
+
+}
+
+displayInventory();
+
+function displayRandomChestItems() {
+  const bonusLoot = JSON.parse(localStorage.getItem('BonusLoot')) || {};
+  const gridContainerRandomChestLoots = document.querySelector('.grid-container-randomChestLoots');
+  gridContainerRandomChestLoots.innerHTML = '';
+  let itemIdCounter = 1;
+
+  for (const bonusId in bonusLoot) {
+    const bonus = bonusLoot[bonusId];
+    const src = bonus.src;
+    const goldPerSec = bonus.goldPerSec;
+
+    const newRandomChestItem = document.createElement('div');
+    newRandomChestItem.id = `grid-bonus${itemIdCounter}`;
+    newRandomChestItem.className = 'shopItemIcon';
+    newRandomChestItem.style.backgroundSize = 'cover';
+    newRandomChestItem.style.backgroundImage = `url("${src}")`;
+    newRandomChestItem.style.padding = '0';
+    newRandomChestItem.innerHTML = `
+        <div style='display:flex; justify-content:center; align-items:center;'>
+            <span style='display:flex; justify-content:center;color:white;'>${goldPerSec} gold/s</span>
+        </div>
+    `;
+
+    gridContainerRandomChestLoots.appendChild(newRandomChestItem);
+
+    itemIdCounter++;
+  }
+}
+
+displayRandomChestItems()
+
+function checkBoughtItems() {
+  const boughtItems = JSON.parse(localStorage.getItem('boughtItems')) || {};
+  for (const itemId in boughtItems) {
+    const itemElement = document.getElementById(`grid-item${itemId}`);
+    if (itemElement) {
+      itemElement.classList.add('bought');
+    }
   }
 }
