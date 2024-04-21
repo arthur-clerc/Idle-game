@@ -1,9 +1,4 @@
 {
-   "greenPotion" :{
-      "id" : 0,
-      "src" : "./assets/miscs/greenPotion.png",
-      "goldPerSec": 1
-   },
    "bluePotion" : {
       "id" : 1,
       "src" : "./assets/miscs/bluePotion.png",
@@ -12,31 +7,36 @@
    "redPotion" :{
       "id" : 2,
       "src" : "./assets/miscs/redPotion.png",
-      "goldPerSec": 3
+      "goldPerSec": 4
    },
    "muscleUp" :{
       "id" : 3,
       "src" : "./assets/miscs/muscleUp.png",
-      "goldPerSec": 4
+      "goldPerSec": 6
    },
    "rubySword" :{
       "id" : 4,
       "src" : "./assets/miscs/rubySword.png",
-      "goldPerSec": 7
+      "goldPerSec": 8
    },
    "fireSword" :{
       "id" : 5,
       "src" : "./assets/miscs/fireSword.png",
-      "goldPerSec": 8
+      "goldPerSec": 10
    },
    "brokenSword" :{
       "id" : 6,
       "src" : "./assets/miscs/brokenSword.png",
       "goldPerSec": 15
    },
+   "greenPotion" :{
+      "id" : 0,
+      "src" : "./assets/miscs/greenPotion.png",
+      "goldPerSec": -5
+   },
    "skull" :{
       "id" : 7,
       "src" : "./assets/miscs/skull.png",
-      "goldPerSec": 10
+      "goldPerSec": -10
    }
 }

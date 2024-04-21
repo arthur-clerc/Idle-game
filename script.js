@@ -1,5 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
+  
   hideChest();
+  checkCharacterColor();
+  checkBoughtItems();
 
   let message = document.getElementById("message");
   setTimeout(() => {
@@ -51,12 +54,26 @@ fetch("bonus.json")
     console.error("Erreur lors du chargement des données :", error)
   );
 
-function getRandomItem() {
-  const bonus = JSON.parse(localStorage.getItem("bonus"));
-  const keys = Object.keys(bonus);
-  const randomKey = keys[Math.floor(Math.random() * keys.length)];
-  return bonus[randomKey];
-}
+  function getRandomItem() {
+    const bonus = JSON.parse(localStorage.getItem("bonus"));
+    let currentBonus = JSON.parse(localStorage.getItem("BonusLoot")) || [];
+    const keys = Object.keys(bonus);
+ 
+    const availableKeys = keys.filter(key => !currentBonus.some(item => item.src === bonus[key].src));
+  
+    if (availableKeys.length === 0) {
+      localStorage.removeItem("BonusLoot");
+      currentBonus = [];
+    }
+  
+    const randomKey = availableKeys[Math.floor(Math.random() * availableKeys.length)];
+  
+    currentBonus.push(bonus[randomKey]);
+    localStorage.setItem("BonusLoot", JSON.stringify(currentBonus));
+  
+    return bonus[randomKey];
+  }
+  
 
 const chest = document.getElementById("chest");
 let chestOpened = false;
@@ -66,7 +83,6 @@ function hideChest() {
   chest.style.display = "none";
   chest.src = "./assets/miscs/chest.png";
 }
-
 function openChest() {
   if (!chestOpened) {
     chestOpened = true;
@@ -74,6 +90,7 @@ function openChest() {
     chest.src = "./assets/miscs/chestGif.gif";
 
     const randomItem = getRandomItem();
+
     const itemImage = document.createElement("img");
     itemImage.classList.add("randomItem");
     itemImage.classList.add("animate-slide-up-down");
@@ -91,13 +108,17 @@ function openChest() {
       document.getElementById("chestContainer").removeChild(itemImage);
       chestOpened = false;
       chest.src = "./assets/miscs/chest.png";
+      
+      currentBonus = currentBonus.filter(item => item.src !== randomItem.src);
     }, 4500);
-
+    displayRandomChestItems()
     setInterval(() => {
       hideChest();
     }, 10 * 60 * 1000);
   }
 }
+
+
 
 chest.addEventListener("click", openChest);
 
@@ -113,7 +134,10 @@ let basicKnight = document.querySelector("#basicKnight");
 let ennemy = document.querySelector("#ennemy");
 let sound = new Audio("assets/son/metal-whoosh-hit.mp3");
 
-basicKnight.addEventListener("click", function () {
+ennemy.addEventListener("click", function () {
+  updateProgress();
+  updateCurrentGold();
+  updateGoldPerClick()
   basicKnight.classList.add("attack");
   ennemy.classList.add("damage");
   sound.play();

@@ -6,7 +6,6 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
-    <script src="store.js" defer></script>
     <script src="inventory.js" defer></script>
     <script src="progress.js" defer></script>
   </head>
@@ -21,19 +20,17 @@
         <h3 class="armorSetTitle">ARMOR SETS</h3>
         <div class="grid-container-shop"></div>
       </aside>
-
-      <!-- ASIDE INVENTORY -->
       <aside id="asideInventory">
         <div class="titles">
-          <h2>INVENTORY</h2>
-          <h2 class="storeTitle">SHOP</h2>
+          <h2 class="storeTitle">INVENTORY</h2>
+          <h2>SHOP</h2>
         </div>
         <h3 class="armorSetTitle">ARMOR SETS</h3>
         <div class="grid-container-inventory"></div>
-        <h3 class="armorSetTitle">MISCS</h3>
+        <h2 class="armorSetTitle">BONUS</h2>
+        <div class="grid-container-randomChestLoots"></div>
       </aside>
-
-      <!-- Parallax backgrounds -->
+       <!-- parallax backgrounds-->
       <div id="layer-1" class="parallax-layer"></div>
       <div id="layer-2" class="parallax-layer"></div>
       <div id="layer-3" class="parallax-layer"></div>
@@ -61,16 +58,17 @@
       <div id="chestContainer">
         <img id="chest" src="assets/miscs/chest.png" alt="Chest" />
       </div>
-      <img src="assets/characters/basicKnight.png" id="basicKnight" />
-      <img src="/assets/characters/ennemy.png" id="ennemy" />
-
-      <!-- PRESS F11 TO PLAY FULLSCREEN CLICK YOUR ENNEMY TO GAIN GOLD ! -->
-      <div id="win-message" class="blinkArcade">YOU WIN!</div>
-      <p id="message" class="blinkArcade">
-        PRESS F11 TO PLAY FULLSCREEN<br />
-        CLICK EVERYWHERE TO GAIN GOLD !
+      <div id="inventory"></div>
+      <div id="shop"></div>
+      <img id="basicKnight">
+      <img src="/assets/characters/ennemy.png" id="ennemy">
+      <p id="message" class="blinkArcade">PRESS F11 TO PLAY FULLSCREEN<br>
+        CLICK ON YOUR ENNEMY TO GAIN GOLD !
       </p>
-      <div id="win-message" class="blinkArcade">YOU WIN!</div>
+      <div id="win-message" class="blinkArcade">
+        YOU WIN!
+      </div>
+      <a id="reset">RESET</a>
     </main>
   </body>
 </html>
