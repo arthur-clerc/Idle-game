@@ -2,6 +2,8 @@ let currentGoldElement = document.getElementById('currentGold');
 let winMessage = document.getElementById('win-message');
 let progressBar = document.getElementById('progress-bar');
 let progressText = document.getElementById('progress-text');
+let goldPerClickSpan = document.getElementById('goldPerClickSpan');
+let goldPerSecSpan = document.getElementById('goldPerSecSpan')
 let boughtItems = JSON.parse(localStorage.getItem('boughtItems')) || {};
 let currentGold = localStorage.getItem('currentGold');
 let currentProgress = localStorage.getItem('progress') ? parseInt(localStorage.getItem('progress'), 10) : 0;
@@ -20,7 +22,8 @@ document.addEventListener('click', () => {
   if (currentProgress < maxProgress) {
       updateProgress();
       updateCurrentGold();
-      updateGoldPerClick()
+      updateGoldPerClick();
+      
   }
 });
 
@@ -31,6 +34,22 @@ window.addEventListener('load', () => {
 } else {
     currentGoldElement.textContent = `Current Gold: 0`;
 }
+
+  const goldPerClick = parseInt(localStorage.getItem('goldPerClick'));
+  if (goldPerClick) {
+  goldPerClickSpan.textContent = `Gold/Clic: ${goldPerClick.toLocaleString()}`;
+} else {
+  goldPerClickSpan.textContent = `Gold/Clic: 0`;
+}
+
+  const goldPerSec = parseInt(localStorage.getItem('goldPerSec'));
+    if (goldPerSec) {
+      goldPerSecSpan.textContent = `Gold/Sec: ${goldPerSec.toLocaleString()}`;
+    } else {
+  goldPerSecSpan.textContent = `Gold/Sec: 0`;
+  }
+
+
 });
 
 function updateCurrentGold() {
@@ -82,7 +101,7 @@ function updateProgressColor() {
 
 function updateGoldPerClick() {
   const armorSet = JSON.parse(localStorage.getItem('armorSet')) || {};
-  
+  let goldPerClick = parseInt(localStorage.getItem('goldPerClick'));
   switch (armorSet.name) {
     case 'iron':
       goldPerClick = 300;
@@ -100,7 +119,31 @@ function updateGoldPerClick() {
       goldPerClick = 100;
       break;
   }
+  
   localStorage.setItem('goldPerClick', goldPerClick.toString());
+  
+  if (goldPerClick) {
+    goldPerClickSpan.textContent = `Gold/Clic: ${goldPerClick.toLocaleString()}`;
+  } else {
+    goldPerClickSpan.textContent = `Gold/Clic: 0`;
+  }
+}
+
+function updateGoldPerSec() {
+ 
+  let goldPerSec = parseInt(localStorage.getItem('goldPerSec'), 10) || 0;
+
+  
+  const boughtItems = JSON.parse(localStorage.getItem('boughtItems')) || {};
+
+  
+  goldPerSec = Object.values(boughtItems).reduce((sum, item) => {
+      return sum + item.goldPerSec;
+  }, 0);
+
+  
+  goldPerSecSpan.textContent = `Gold/Sec: ${goldPerSec.toLocaleString()}`;
+  localStorage.setItem('goldPerSec', goldPerSec.toString());
 }
 
 function handleItemClick(piece) {
@@ -116,6 +159,8 @@ function handleItemClick(piece) {
         currentGold -= piece.price;
         checkArmorSetCompletion(boughtItems);
         updateCurrentGold();
+        updateGoldPerSec();
+        updateGoldPerSec();
         console.log('Element acheté:', piece);
     } else {
         console.log('Element déjà acheté:', piece);
