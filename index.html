@@ -11,6 +11,7 @@
   </head>
   <body>
     <main>
+      <!-- ASIDE SHOP -->
       <aside id="asideShop">
         <div class="titles">
           <h2>INVENTORY</h2>
@@ -18,40 +19,56 @@
         </div>
         <h3 class="armorSetTitle">ARMOR SETS</h3>
         <div class="grid-container-shop"></div>
-        <div class="grid-container-inventory"></div>
       </aside>
-      <aside id="asideInventory"></aside>
+      <aside id="asideInventory">
+        <div class="titles">
+          <h2 class="storeTitle">INVENTORY</h2>
+          <h2>SHOP</h2>
+        </div>
+        <h3 class="armorSetTitle">ARMOR SETS</h3>
+        <div class="grid-container-inventory"></div>
+        <h2 class="armorSetTitle">BONUS</h2>
+        <div class="grid-container-randomChestLoots"></div>
+      </aside>
        <!-- parallax backgrounds-->
       <div id="layer-1" class="parallax-layer"></div>
       <div id="layer-2" class="parallax-layer"></div>
       <div id="layer-3" class="parallax-layer"></div>
-        <!-- progressBar -->
+
+      <!-- ProgressBar -->
       <div id="progress-wrapper">
         <div id="progress-container">
           <div id="progress-text"></div>
           <div id="progress-bar"></div>
         </div>
       </div>
-      <!-- display gold container with spans-->
+
+      <!-- Display gold container with spans-->
       <div id="gold-container">
         <span id="goldPerSecSpan"></span>
         <span id="goldPerClickSpan"></span>
         <span id="currentGold"></span>
       </div>
-      <!-- display PNG : chest, inventory, shop, player & ennemy -->
+
+      <!-- BUTTON -->
+      <div id="inventory"></div>
+      <div id="shop"></div>
+
+      <!-- Display PNG : chest, inventory, shop, player & ennemy -->
       <div id="chestContainer">
         <img id="chest" src="assets/miscs/chest.png" alt="Chest" />
       </div>
       <div id="inventory"></div>
       <div id="shop"></div>
-      <img src="assets/characters/basicKnight.png" id="basicKnight">
+      <img id="basicKnight">
       <img src="/assets/characters/ennemy.png" id="ennemy">
-      <!-- <p id="message" class="blinkArcade">PRESS F11 TO PLAY FULLSCREEN<br>
-        CLICK YOUR ENNEMY TO GAIN GOLD !
-      </p> -->
+      <p id="message" class="blinkArcade">PRESS F11 TO PLAY FULLSCREEN<br>
+        CLICK ON YOUR ENNEMY TO GAIN GOLD !
+      </p>
       <div id="win-message" class="blinkArcade">
         YOU WIN!
       </div>
+      <a id="reset">RESET</a>
     </main>
   </body>
 </html>
