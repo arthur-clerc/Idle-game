@@ -5,7 +5,6 @@ const inventory = document.getElementById("inventory");
 const shop = document.getElementById("shop");
 let isOpenedInventory = false;
 let isOpenedShop = false;
-
 function toggleShop() {
   if (isOpenedInventory === false && isOpenedShop === false) {
     asideShop.classList.toggle("open");
@@ -25,11 +24,12 @@ function toggleInventory() {
   if (isOpenedShop === false && isOpenedInventory === false) {
     asideInventory.classList.toggle("open");
     isOpenedInventory = true;
-    if (isOpenedShop) {
-      asideShop.classList.toggle("open");
-      isOpenedShop = false;
-    }
-  } else {
+  } else if (isOpenedShop === true && isOpenedInventory === false) {
+    asideShop.classList.toggle("open");
+    isOpenedShop = false;
+    asideInventory.classList.toggle("open");
+    isOpenedInventory = true;
+  } else if (isOpenedShop === false && isOpenedInventory === true) {
     asideInventory.classList.toggle("open");
     isOpenedInventory = false;
   }

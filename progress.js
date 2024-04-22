@@ -19,15 +19,6 @@ fetch("armorSet.json")
     console.error("Erreur lors du chargement des données :", error)
   );
 
-document.addEventListener('click', () => {
-  if (currentProgress < maxProgress) {
-      updateProgress();
-      updateCurrentGold();
-      updateGoldPerClick();
-      
-  }
-});
-
 window.addEventListener('load', () => {
   const currentGold = parseInt(localStorage.getItem('currentGold'));
   if (currentGold) {
