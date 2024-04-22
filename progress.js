@@ -167,8 +167,15 @@ reset.addEventListener('click', function() {
       location.reload();
 })
 
+let goldInterval = null;
+
 function goldPerSecUpdateCurrentGold() {
-  setInterval(() => {
+  
+  if (goldInterval !== null) {
+    clearInterval(goldInterval);
+  }
+
+  goldInterval = setInterval(() => {
     let currentGold = parseInt(localStorage.getItem('currentGold'), 10) || 0;
     const goldPerSec = parseInt(localStorage.getItem('goldPerSec'), 10) || 0;
 
@@ -180,4 +187,4 @@ function goldPerSecUpdateCurrentGold() {
   }, 1000);
 }
 
-goldPerSecUpdateCurrentGold()
+goldPerSecUpdateCurrentGold();
