@@ -41,7 +41,6 @@ window.addEventListener('load', () => {
   goldPerSecSpan.textContent = `Gold/Sec: 0`;
   }
 
-
 });
 
 function updateCurrentGold() {
@@ -49,7 +48,7 @@ function updateCurrentGold() {
   currentGold = currentGold ? parseInt(currentGold, 10) : 0;
 
   const goldPerClick = parseInt(localStorage.getItem('goldPerClick'), 10) || 100;
-
+  
   currentGold += goldPerClick;
 
   currentGoldElement.textContent = `Current Gold: ${currentGold.toLocaleString()}`;
@@ -128,44 +127,17 @@ function updateGoldPerClick() {
 }
 
 function updateGoldPerSec() {
- 
-  let goldPerSec = parseInt(localStorage.getItem('goldPerSec'), 10) || 0;
-
-  
   const boughtItems = JSON.parse(localStorage.getItem('boughtItems')) || {};
+  let totalGoldPerSec = 0;
 
-  
-  goldPerSec = Object.values(boughtItems).reduce((sum, item) => {
-      return sum + item.goldPerSec;
-  }, 0);
+  for (const itemId in boughtItems) {
+    const item = boughtItems[itemId];
+    const goldPerSec = item.goldPerSec || 0;
+    totalGoldPerSec += goldPerSec;
+  }
 
-  
-  goldPerSecSpan.textContent = `Gold/Sec: ${goldPerSec.toLocaleString()}`;
-  localStorage.setItem('goldPerSec', goldPerSec.toString());
-}
-
-function handleItemClick(piece) {
-  if (piece.price <= currentGold) {
-    if (!boughtItems[piece.id]) {
-        boughtItems[piece.id] = {
-            src: piece.src,
-            price: piece.price,
-            buyReward: piece.buyReward,
-            goldPerSec: piece.goldPerSec
-        };
-        localStorage.setItem('boughtItems', JSON.stringify(boughtItems));
-        currentGold -= piece.price;
-        checkArmorSetCompletion(boughtItems);
-        updateCurrentGold();
-        updateGoldPerSec();
-        updateGoldPerSec();
-        console.log('Element acheté:', piece);
-    } else {
-        console.log('Element déjà acheté:', piece);
-    }
-} else {
-  console.log(`Vous n'avez pas assez de gold pour acheter cette pièce !`);
-}
+  localStorage.setItem('goldPerSec', totalGoldPerSec.toString());
+  goldPerSecSpan.textContent = `Gold/Sec: ${totalGoldPerSec.toLocaleString()}`;
 }
 
 function checkArmorSetCompletion(boughtItems) {
@@ -194,3 +166,18 @@ reset.addEventListener('click', function() {
       localStorage.clear();
       location.reload();
 })
+
+function goldPerSecUpdateCurrentGold() {
+  setInterval(() => {
+    let currentGold = parseInt(localStorage.getItem('currentGold'), 10) || 0;
+    const goldPerSec = parseInt(localStorage.getItem('goldPerSec'), 10) || 0;
+
+    if (goldPerSec) {
+      currentGold += goldPerSec;
+      localStorage.setItem('currentGold', currentGold.toString());
+      currentGoldElement.textContent = `Current Gold: ${currentGold.toLocaleString()}`;
+    }
+  }, 1000);
+}
+
+goldPerSecUpdateCurrentGold()

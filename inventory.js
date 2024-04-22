@@ -95,6 +95,8 @@ function fetchDataAndCreateElements() {
                   updateCurrentGold();
                   checkCharacterColor();
                   displayInventory();
+                  updateGoldPerSec();
+                  goldPerSecUpdateCurrentGold()
 
                   console.log('Element acheté:', piece);
                 } else {
