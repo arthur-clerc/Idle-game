@@ -1,0 +1,182 @@
+{
+  "firstSteps": {
+    "id": "firstSteps",
+    "name": "First Blood",
+    "description": "Click the enemy for the first time",
+    "icon": "⚔️",
+    "condition": {
+      "type": "clicks",
+      "value": 1
+    },
+    "reward": {
+      "type": "gold",
+      "value": 100
+    },
+    "tier": "bronze"
+  },
+  "clickWarrior": {
+    "id": "clickWarrior",
+    "name": "Click Warrior",
+    "description": "Click 1000 times",
+    "icon": "🗡️",
+    "condition": {
+      "type": "clicks",
+      "value": 1000
+    },
+    "reward": {
+      "type": "gold",
+      "value": 5000
+    },
+    "tier": "silver"
+  },
+  "clickMaster": {
+    "id": "clickMaster",
+    "name": "Click Master",
+    "description": "Click 10000 times",
+    "icon": "👑",
+    "condition": {
+      "type": "clicks",
+      "value": 10000
+    },
+    "reward": {
+      "type": "multiplier",
+      "value": 1.1
+    },
+    "tier": "gold"
+  },
+  "firstGold": {
+    "id": "firstGold",
+    "name": "Getting Started",
+    "description": "Earn 1000 gold",
+    "icon": "💰",
+    "condition": {
+      "type": "totalGoldEarned",
+      "value": 1000
+    },
+    "reward": {
+      "type": "gold",
+      "value": 500
+    },
+    "tier": "bronze"
+  },
+  "richKnight": {
+    "id": "richKnight",
+    "name": "Rich Knight",
+    "description": "Earn 100,000 gold",
+    "icon": "💎",
+    "condition": {
+      "type": "totalGoldEarned",
+      "value": 100000
+    },
+    "reward": {
+      "type": "gold",
+      "value": 10000
+    },
+    "tier": "silver"
+  },
+  "millionaire": {
+    "id": "millionaire",
+    "name": "Millionaire",
+    "description": "Earn 1,000,000 gold",
+    "icon": "🏆",
+    "condition": {
+      "type": "totalGoldEarned",
+      "value": 1000000
+    },
+    "reward": {
+      "type": "multiplier",
+      "value": 1.25
+    },
+    "tier": "gold"
+  },
+  "firstPurchase": {
+    "id": "firstPurchase",
+    "name": "Shopping Spree",
+    "description": "Buy your first item",
+    "icon": "🛍️",
+    "condition": {
+      "type": "itemsPurchased",
+      "value": 1
+    },
+    "reward": {
+      "type": "gold",
+      "value": 200
+    },
+    "tier": "bronze"
+  },
+  "collector": {
+    "id": "collector",
+    "name": "Collector",
+    "description": "Buy all armor sets",
+    "icon": "🎖️",
+    "condition": {
+      "type": "itemsPurchased",
+      "value": 16
+    },
+    "reward": {
+      "type": "multiplier",
+      "value": 1.5
+    },
+    "tier": "gold"
+  },
+  "luckyOne": {
+    "id": "luckyOne",
+    "name": "Lucky One",
+    "description": "Open 10 chests",
+    "icon": "🎁",
+    "condition": {
+      "type": "chestsOpened",
+      "value": 10
+    },
+    "reward": {
+      "type": "gold",
+      "value": 2000
+    },
+    "tier": "silver"
+  },
+  "speedRunner": {
+    "id": "speedRunner",
+    "name": "Speed Runner",
+    "description": "Win the game in under 30 minutes",
+    "icon": "⚡",
+    "condition": {
+      "type": "winTime",
+      "value": 1800
+    },
+    "reward": {
+      "type": "multiplier",
+      "value": 2
+    },
+    "tier": "gold"
+  },
+  "dedicated": {
+    "id": "dedicated",
+    "name": "Dedicated Knight",
+    "description": "Play for 1 hour total",
+    "icon": "⏰",
+    "condition": {
+      "type": "timePlayed",
+      "value": 3600
+    },
+    "reward": {
+      "type": "gold",
+      "value": 5000
+    },
+    "tier": "silver"
+  },
+  "upgrader": {
+    "id": "upgrader",
+    "name": "Power Up!",
+    "description": "Purchase 5 upgrades",
+    "icon": "📈",
+    "condition": {
+      "type": "upgradesPurchased",
+      "value": 5
+    },
+    "reward": {
+      "type": "gold",
+      "value": 3000
+    },
+    "tier": "silver"
+  }
+}

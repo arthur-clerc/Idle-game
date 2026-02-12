@@ -1,0 +1,118 @@
+{
+  "goldPerClick": [
+    {
+      "id": "gpc1",
+      "name": "Better Sword",
+      "description": "Double your gold per click",
+      "level": 1,
+      "basePrice": 500,
+      "priceMultiplier": 2,
+      "effect": 2,
+      "effectType": "multiply",
+      "icon": "⚔️"
+    },
+    {
+      "id": "gpc2",
+      "name": "Enchanted Blade",
+      "description": "5x gold per click",
+      "level": 2,
+      "basePrice": 5000,
+      "priceMultiplier": 2.5,
+      "effect": 5,
+      "effectType": "multiply",
+      "icon": "🗡️"
+    },
+    {
+      "id": "gpc3",
+      "name": "Legendary Weapon",
+      "description": "10x gold per click",
+      "level": 3,
+      "basePrice": 50000,
+      "priceMultiplier": 3,
+      "effect": 10,
+      "effectType": "multiply",
+      "icon": "⚡"
+    }
+  ],
+  "goldPerSec": [
+    {
+      "id": "gps1",
+      "name": "Hire Squire",
+      "description": "+10 gold per second",
+      "level": 1,
+      "basePrice": 300,
+      "priceMultiplier": 1.5,
+      "effect": 10,
+      "effectType": "add",
+      "icon": "👤"
+    },
+    {
+      "id": "gps2",
+      "name": "Gold Mine",
+      "description": "+50 gold per second",
+      "level": 2,
+      "basePrice": 2000,
+      "priceMultiplier": 1.8,
+      "effect": 50,
+      "effectType": "add",
+      "icon": "⛏️"
+    },
+    {
+      "id": "gps3",
+      "name": "Trading Post",
+      "description": "+200 gold per second",
+      "level": 3,
+      "basePrice": 15000,
+      "priceMultiplier": 2,
+      "effect": 200,
+      "effectType": "add",
+      "icon": "🏛️"
+    },
+    {
+      "id": "gps4",
+      "name": "Royal Treasury",
+      "description": "+1000 gold per second",
+      "level": 4,
+      "basePrice": 100000,
+      "priceMultiplier": 2.5,
+      "effect": 1000,
+      "effectType": "add",
+      "icon": "👑"
+    }
+  ],
+  "special": [
+    {
+      "id": "autoclick",
+      "name": "Auto-Clicker",
+      "description": "Clicks 1 time per second automatically",
+      "level": 1,
+      "basePrice": 1000,
+      "priceMultiplier": 3,
+      "effect": 1,
+      "effectType": "autoclick",
+      "icon": "🤖"
+    },
+    {
+      "id": "critchance",
+      "name": "Critical Strike",
+      "description": "10% chance to deal 3x damage",
+      "level": 1,
+      "basePrice": 5000,
+      "priceMultiplier": 4,
+      "effect": 10,
+      "effectType": "critchance",
+      "icon": "💥"
+    },
+    {
+      "id": "luckboost",
+      "name": "Lucky Charm",
+      "description": "Double chest rewards",
+      "level": 1,
+      "basePrice": 10000,
+      "priceMultiplier": 5,
+      "effect": 2,
+      "effectType": "luckboost",
+      "icon": "🍀"
+    }
+  ]
+}
